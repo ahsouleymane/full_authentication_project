@@ -1,0 +1,48 @@
+{% extends "full_authentication/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1 class="display-4">Inscription</h1>
+<p class="lead font-italic">Veuillez remplir le formulaire ci-dessous.</p>
+<hr class="my-4">
+
+
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    
+    <div class="col-md-8 offset-md-2 mt-5">
+
+        <label for="text">Nom: </label><span style="color: red;">*</span>
+        <input class="form-control" type="text" name="nom" id="nom" 
+        placeholder="Saisir votre nom" required><br>
+
+        <label for="text">Prénom: </label><span style="color: red;">*</span>
+        <input class="form-control" type="text" name="prenom" id="prenom" 
+        placeholder="Saisir votre prenom" required><br>
+
+        <label for="text">Nom d'utilisateur</label><span style="color: red;">*</span>
+        <input class="form-control" type="text" name="nomutil" id="username" 
+        placeholder="Saisir votre nom d'utilisateur" required><br>
+
+        <label for="email">Email: </label><span style="color: red;">*</span>
+        <input class="form-control" type="email" name="email" id="email" 
+        placeholder="Saisir votre email" required><br>
+
+        <label for="password">Mot de passe: </label><span style="color: red;">*</span>
+        <input class="form-control" type="password" name="mdp" id="mdp" 
+        placeholder="Saisir votre mot de passe" required><br>
+
+
+        <label for="password1">Confirmation mot de passe: </label><span style="color: red;">*</span>
+        <input class="form-control" type="password" name="mdp1" id="mdp1" 
+        placeholder="Confirmer votre mot de passe" required><br>
+
+        <a href="{% url 'login' %}" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-circle-plus"></i> S'inscrire
+        </a>
+
+    </div>
+
+</form>
+{% endblock content %}
