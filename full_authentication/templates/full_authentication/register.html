@@ -7,6 +7,15 @@
 <p class="lead font-italic">Veuillez remplir le formulaire ci-dessous.</p>
 <hr class="my-4">
 
+<center>
+
+{% for message in messages %}
+
+{{message}}
+
+{% endfor %}
+
+</center>
 
 <form action="" method="post" autocomplete="off">
     {% csrf_token %}
@@ -21,8 +30,8 @@
         <input class="form-control" type="text" name="prenom" id="prenom" 
         placeholder="Saisir votre prenom" required><br>
 
-        <label for="text">Nom d'utilisateur</label><span style="color: red;">*</span>
-        <input class="form-control" type="text" name="nomutil" id="username" 
+        <label for="username">Nom d'utilisateur</label><span style="color: red;">*</span>
+        <input class="form-control" type="text" name="username" id="username" 
         placeholder="Saisir votre nom d'utilisateur" required><br>
 
         <label for="email">Email: </label><span style="color: red;">*</span>
@@ -30,17 +39,27 @@
         placeholder="Saisir votre email" required><br>
 
         <label for="password">Mot de passe: </label><span style="color: red;">*</span>
-        <input class="form-control" type="password" name="mdp" id="mdp" 
+        <input class="form-control" type="password" name="password" id="password" 
         placeholder="Saisir votre mot de passe" required><br>
 
 
         <label for="password1">Confirmation mot de passe: </label><span style="color: red;">*</span>
-        <input class="form-control" type="password" name="mdp1" id="mdp1" 
+        <input class="form-control" type="password" name="password1" id="password1" 
         placeholder="Confirmer votre mot de passe" required><br>
 
-        <a href="{% url 'login' %}" class="btn btn-primary btn-block">
-            <i class="fa-solid fa-circle-plus"></i> S'inscrire
-        </a>
+        <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-circle-plus"></i> S'inscrire
+            </button>
+        </div>
+
+        <div class="col-md-4">
+            <a href="{% url 'login' %}" class="btn btn-secondary btn-block">
+                <i class="fa-solid fa-database"></i> Se connecter
+            </a>
+        </div>
+        <div><br>
 
     </div>
 
