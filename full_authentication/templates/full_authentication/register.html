@@ -7,6 +7,10 @@
 <p class="lead font-italic">Veuillez remplir le formulaire ci-dessous.</p>
 <hr class="my-4">
 
+<a href="{% url 'home' %}" class="btn btn-secondary btn-block col-md-8 offset-md-2">
+    <i class="fa-solid fa-home"></i> Accueil
+</a><br><br>
+
 <center>
 
 {% for message in messages %}
@@ -52,12 +56,6 @@
             <button type="submit" class="btn btn-primary btn-block">
                 <i class="fa-solid fa-circle-plus"></i> S'inscrire
             </button>
-        </div>
-
-        <div class="col-md-4">
-            <a href="{% url 'login' %}" class="btn btn-secondary btn-block">
-                <i class="fa-solid fa-database"></i> Se connecter
-            </a>
         </div>
         <div><br>
 

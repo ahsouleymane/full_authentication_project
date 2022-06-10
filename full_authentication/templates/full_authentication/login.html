@@ -7,6 +7,10 @@
 <p class="lead font-italic">Veuillez saisir votre compte et votre mot de passe.</p>
 <hr class="my-4">
 
+<a href="{% url 'home' %}" class="btn btn-secondary btn-block col-md-8 offset-md-2">
+    <i class="fa-solid fa-home"></i> Accueil
+</a><br><br>
+
 <center>
 
 {% for message in messages %}
@@ -43,11 +47,6 @@
             </a>
         </div>
         <div><br>
-
-        <a href="{% url 'register' %}" class="btn btn-secondary btn-block">
-            <i class="fa-solid fa-circle-plus"></i> S'inscrire
-        </a><br><br>
-
 
     </div>
 
